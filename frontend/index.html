@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI SOP Generator</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-inner">
+    <div class="nav-brand">SOP Generator</div>
+    <div class="nav-links">
+      <a class="nav-link active" href="/">Generator</a>
+      <a class="nav-link" href="/library">Library</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container hero">
+  <h1 class="hero-title">Generate SOPs with AI</h1>
+  <div class="generate-input-wrap">
+    <input type="text" id="process-input" placeholder="e.g. Employee Onboarding">
+    <button class="btn btn-primary" id="generate-btn">Generate</button>
+  </div>
+  <div style="margin-top:20px;">
+    <button class="btn btn-ghost" id="btn-view-library">Browse Library</button>
+  </div>
+</div>
+
+<div id="loading-overlay" class="loading-overlay"><div class="spinner" style="margin:0 auto"></div>Generating...</div>
+
+<div id="sop-result" class="card">
+  <div class="sop-card-header">
+    <div><div id="res-process-name" style="font-size:1.5rem;font-weight:bold"></div><div id="res-dept" style="color:var(--purple-400)"></div></div>
+    <div>
+      <button class="btn btn-secondary" id="btn-edit">Edit</button>
+      <button class="btn btn-primary" id="btn-save">Save</button>
+      <button class="btn btn-ghost" id="btn-download">Download</button>
+    </div>
+  </div>
+  <div class="sop-card-body">
+    <div class="sop-field full-width"><label>Objective</label><div id="res-objective"></div></div>
+    <div class="sop-field"><label>Scope</label><div id="res-scope"></div></div>
+    <div class="sop-field"><label>Roles</label><div id="res-roles"></div></div>
+    <div class="sop-field"><label>Prerequisites</label><div id="res-prerequisites"></div></div>
+    <div class="sop-field"><label>Review</label><div id="res-review-frequency"></div></div>
+    <div class="sop-field full-width"><label>Steps</label><div id="res-steps"></div></div>
+    <div class="sop-field"><label>KPIs</label><div id="res-kpis"></div></div>
+    <div class="sop-field"><label>Risks</label><div id="res-risk-factors"></div></div>
+    <div class="sop-field full-width"><label>Tools</label><div id="res-tools-required"></div></div>
+  </div>
+</div>
+
+<div id="edit-panel" class="card">
+  <div class="edit-panel-header"><h3>Edit SOP</h3></div>
+  <div class="edit-panel-body">
+    <div class="input-group"><label>Process Name</label><input type="text" id="edit-process-name"></div>
+    <div class="input-group"><label>Department</label><input type="text" id="edit-department"></div>
+    <div class="input-group full-width"><label>Objective</label><textarea id="edit-objective"></textarea></div>
+    <div class="input-group"><label>Scope</label><textarea id="edit-scope"></textarea></div>
+    <div class="input-group"><label>Roles</label><textarea id="edit-roles"></textarea></div>
+    <div class="input-group"><label>Prerequisites</label><textarea id="edit-prerequisites"></textarea></div>
+    <div class="input-group"><label>Review Frequency</label><input type="text" id="edit-review-frequency"></div>
+    <div class="input-group full-width"><label>Steps</label><textarea id="edit-steps"></textarea></div>
+    <div class="input-group"><label>KPIs</label><textarea id="edit-kpis"></textarea></div>
+    <div class="input-group"><label>Risks</label><textarea id="edit-risk-factors"></textarea></div>
+    <div class="input-group full-width"><label>Tools Required</label><textarea id="edit-tools-required"></textarea></div>
+  </div>
+  <div style="padding:20px;text-align:right">
+    <button class="btn btn-ghost" id="btn-cancel-edit">Cancel</button>
+    <button class="btn btn-primary" id="btn-save-edits">Save Changes</button>
+  </div>
+</div>
+
+<div id="toast-container"></div>
+<script src="/static/js/app.js"></script>
+</body>
+</html>

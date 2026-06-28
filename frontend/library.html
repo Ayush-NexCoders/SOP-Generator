@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SOP Library</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-inner">
+    <div class="nav-brand">SOP Generator</div>
+    <div class="nav-links">
+      <a class="nav-link" href="/">Generator</a>
+      <a class="nav-link active" href="/library">Library</a>
+    </div>
+  </div>
+</nav>
+<div class="container" style="padding-top:40px">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 20px;">
+    <h1>Library</h1>
+    <button class="btn btn-primary" id="btn-generate-new">New SOP</button>
+  </div>
+  <input type="search" id="search-input" placeholder="Search SOPs..." style="margin-bottom:20px; max-width:400px">
+  <div id="sop-grid" class="sop-grid"></div>
+</div>
+
+<div id="view-modal" class="modal-overlay">
+  <div class="modal-box">
+    <div style="display:flex;justify-content:space-between;margin-bottom:20px">
+      <h3>SOP Details</h3>
+      <button class="btn btn-ghost btn-sm" id="close-modal">✕</button>
+    </div>
+    <div id="modal-sop-body" style="color:white; line-height:1.6;"></div>
+    <div style="margin-top:20px;text-align:right">
+      <button class="btn btn-secondary" id="close-modal-footer">Close</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast-container"></div>
+<script src="/static/js/library.js"></script>
+</body>
+</html>
